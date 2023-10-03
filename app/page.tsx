@@ -3,10 +3,11 @@ import Books from "@/components/Books";
 import { SearchBar } from "@/components/Search";
 import { SkeletonDemo } from "@/components/SkeletonDemo";
 import { useState } from "react";
+import { Book } from "@/types";
 
 export default function Home() {
   const [searchValue, setSearchValue] = useState('');
-  const [books, setBooks] = useState();    
+  const [books, setBooks] = useState<Book[]>([]);
   const [fetching, setFetching] = useState(false);
   return (
     <main className="flex w-full items-center flex-col gap-4">
