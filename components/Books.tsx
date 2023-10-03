@@ -3,12 +3,11 @@ import { Button } from "./ui/button"
 import Image from "next/image"
 
 function downloadFile(book:Book) {
-  function tryDownload(index) {
+  function tryDownload(index:number) {
     if (index > 4) {
       console.error('Failed to download file from all URLs');
       return;
     }
-    console.log(index);
     fetch(book[`DownloadLink`+index])
       .then((response) => {
         if (response.ok) {
