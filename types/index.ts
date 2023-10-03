@@ -14,3 +14,11 @@ export type Book = {
     DownloadLinks: string[];
     Image: string;
 }
+
+export type SearchBarProps = {
+    setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+    searchValue: string;
+    setBooks: (books: Book[]) => void;
+    fetching: boolean;
+    setFetching: React.Dispatch<React.SetStateAction<boolean>>;
+};

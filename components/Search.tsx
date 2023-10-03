@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from 'react';
 import { libgenScraper } from "@/lib/actions";
+import { SearchBarProps } from "@/types";
 
-export function SearchBar({setSearchValue, searchValue, setBooks,fetching, setFetching}) {
+export function SearchBar({setSearchValue, searchValue, setBooks,fetching, setFetching}:SearchBarProps ) {
     const handleSubmit = async (e:any) => {
         e.preventDefault();
         setFetching(true);

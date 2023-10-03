@@ -38,7 +38,11 @@ function downloadFile(book:Book) {
   tryDownload(0);
 }
 
-const Books = ({books}) => {
+type BooksProps = {
+  books: Book[];
+};
+
+const Books = ({books}:BooksProps) => {
     return (
     <div className='flex flex-wrap justify-center gap-4 w-full'>
         {books?.length===0 
