@@ -1,4 +1,21 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+module.exports = {
+  experimental: {
+    serverActions: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'library.lol',
+        port: '',
+        pathname: '/covers/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'library.lol',
+        port: '',
+        pathname: '/img/**',
+      },
+    ],
+  },
+};
