@@ -4,11 +4,11 @@ import Image from "next/image"
 
 function downloadFile(book:Book) {
   function tryDownload(index:number) {
-    if (index > 4) {
+    if (index >=4) {
       console.error('Failed to download file from all URLs');
       return;
     }
-    fetch(book[`DownloadLink`+index])
+    fetch(book.DownloadLinks[index])
       .then((response) => {
         if (response.ok) {
           return response.blob();
@@ -22,7 +22,7 @@ function downloadFile(book:Book) {
           const url = window.URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          a.download = book.Title;
+          a.download = book.Title || 'downloadedBook';
           a.style.display = 'none';
           document.body.appendChild(a);
           a.click();
@@ -35,7 +35,7 @@ function downloadFile(book:Book) {
         // console.error('Error downloading file:', error);
       });
   }
-  tryDownload(1);
+  tryDownload(0);
 }
 
 const Books = ({books}) => {
