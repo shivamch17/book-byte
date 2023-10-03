@@ -2,7 +2,7 @@ import { Book } from "@/types"
 import { Button } from "./ui/button"
 import Image from "next/image"
 
-function downloadFile(book) {
+function downloadFile(book:Book) {
   function tryDownload(index) {
     if (index > 4) {
       console.error('Failed to download file from all URLs');
