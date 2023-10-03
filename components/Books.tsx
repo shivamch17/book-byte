@@ -46,7 +46,7 @@ const Books = ({books}:BooksProps) => {
     return (
     <div className='flex flex-wrap justify-center gap-4 w-full'>
         {books?.length===0 
-        ? <div className="text-2xl">Nothing found try with a different title..</div>
+        ? <div className="text-2xl">No Records</div>
         :<>
             {books?.map((book:Book,idx:number)=>
             <div className='flex bg-gray-800 text-white rounded-xl m-5 shadow-xl w-[500px]' key={idx}>
@@ -61,7 +61,7 @@ const Books = ({books}:BooksProps) => {
                         <p className='my-4'><span className="font-semibold text-red-500">File Type:</span> {book.Extension}</p>
                         <p className='my-4'><span className="font-semibold text-red-500">Size:</span> {book.Size}</p>
                     </div>
-                    <Button className="w-full bg-white text-black hover:text-white hover:bg-red-500" onClick={() => downloadFile(book)}>Download</Button>
+                    <Button className="w-full hover:bg-white hover:text-black text-white bg-red-500" onClick={() => downloadFile(book)}>Download</Button>
                 </div>
             </div>
             )}
