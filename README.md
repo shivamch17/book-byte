@@ -1,6 +1,6 @@
 ## BookByte
 
-Seach and Download any book with ease  
+#### Search and Download any book with ease.  
 
 ![image](https://github.com/shivamch17/book-byte/assets/90765173/26b8070d-b4e5-4def-97de-7cb265656582)
 
