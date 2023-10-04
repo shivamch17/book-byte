@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="text-[26px] md:text-[32px] flex items-center font-semibold "><FcReadingEbook />
         <p>Book<span className="text-red-500">Byte</span></p>
       </div>
-      <Button size={"sm"}>How to use</Button>
+      <Button size={"sm"}>Report a bug</Button>
     </nav>
   )
 }

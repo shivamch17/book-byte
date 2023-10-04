@@ -54,11 +54,10 @@ const Books = ({books}:BooksProps) => {
               className='flex bg-gray-800 text-white rounded-xl shadow-xl '
               key={idx}
             >
-             <div className="relative w-1/2 m-1.5 min-w-[180px]">
+             <div className="relative w-1/2 m-1.5 max-sm:min-w-[180px] min-w-[220px]">
                 <Image
                   src={book.Image}
                   layout="fill"
-                  objectFit="cover"
                   alt={book.Title}
                   quality={10}
                   className="rounded-xl"

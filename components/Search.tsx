@@ -19,7 +19,7 @@ export function SearchBar({setSearchValue, searchValue, setBooks,fetching, setFe
                 placeholder="Enter the title of the book.."
                 onChange={(e) => setSearchValue(e.target.value)}
             />
-            <Button type="submit" size="sm" disabled={fetching}>Search</Button>
+            <Button type="submit" disabled={fetching}>Search</Button>
         </form>
     )
 }
