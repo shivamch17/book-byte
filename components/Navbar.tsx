@@ -3,14 +3,12 @@ import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
-    <header className="w-full md:px-36 px-2">
-        <nav className="flex justify-between items-center gap-1">
-            <div className="md:text-[36px] flex items-center font-semibold "><FcReadingEbook/>
-                <p>Book<span className="text-red-500">Byte</span></p>
-            </div>
-            <Button>How to use</Button>
-        </nav>
-    </header>
+    <nav className="flex justify-between items-center gap-1 p-2 md:px-24 lg:px-36 ">
+      <div className="text-[26px] md:text-[32px] flex items-center font-semibold "><FcReadingEbook />
+        <p>Book<span className="text-red-500">Byte</span></p>
+      </div>
+      <Button size={"sm"}>How to use</Button>
+    </nav>
   )
 }
 
