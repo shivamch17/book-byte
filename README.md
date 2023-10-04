@@ -1,6 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## BookByte
 
-## Getting Started
+Seach and Download any book with ease  
+
+![image](https://github.com/shivamch17/book-byte/assets/90765173/26b8070d-b4e5-4def-97de-7cb265656582)
+
+
+## Visit -[https://book-byte.vercel.app/]
+
+## Getting Started (running locally)
 
 First, run the development server:
 
