@@ -9,9 +9,8 @@ export type Book = {
     Language?: string;
     Size?: string;
     Extension?: string;
-    Mirror1?: string;
-    Mirror2: string;
-    DownloadLinks: string[];
+    Mirror1: string;
+    Mirror2?: string;
     Image: string;
 }
 

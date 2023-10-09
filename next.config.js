@@ -16,6 +16,18 @@ module.exports = {
         port: '',
         pathname: '/img/**',
       },
+      {
+        protocol: 'http',
+        hostname: 'libgen.is',
+        port: '',
+        pathname: '/covers/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'libgen.is',
+        port: '',
+        pathname: '/img/**',
+      },
     ],
   },
 };

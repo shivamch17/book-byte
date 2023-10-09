@@ -20,7 +20,7 @@ export default function Home() {
       <section className="mt-12">
       {fetching ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:px-6 gap-6 mb-8 w-full px-2">
-          {Array.from({ length: 10 }).map((_, idx) => (
+          {Array.from({ length: 25 }).map((_, idx) => (
             <SkeletonDemo key={idx} />
           ))}
         </div>

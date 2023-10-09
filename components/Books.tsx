@@ -1,42 +1,6 @@
 import { Book } from "@/types"
-import { Button } from "./ui/button"
 import Image from "next/image"
-
-function downloadFile(book:Book) {
-  function tryDownload(index:number) {
-    if (index >=4) {
-      console.error('Failed to download file from all URLs');
-      return;
-    }
-    fetch(book.DownloadLinks[index])
-      .then((response) => {
-        if (response.ok) {
-          return response.blob();
-        } else {
-        //   console.error(`Failed to download file from ${book[index]}`);
-          tryDownload(index + 1);
-        }
-      })
-      .then((blob) => {
-        if (blob) {
-          const url = window.URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = book.Title || 'downloadedBook';
-          a.style.display = 'none';
-          document.body.appendChild(a);
-          a.click();
-          window.URL.revokeObjectURL(url);
-          document.body.removeChild(a);
-        }
-      })
-      .catch((error) => {
-        tryDownload(index + 1);
-        // console.error('Error downloading file:', error);
-      });
-  }
-  tryDownload(0);
-}
+import DownloadButton from '@/components/DownloadButton';
 
 type BooksProps = {
   books: Book[];
@@ -59,9 +23,7 @@ const Books = ({books}:BooksProps) => {
                   src={book.Image}
                   layout="fill"
                   alt={book.Title}
-                  quality={10}
                   className="rounded-xl"
-                  priority
                 />
                 <div className="flex justify-between w-full absolute bottom-1 px-1 sm:hidden">
                   <p className="text-white bg-gray-800 rounded-md text-md px-1">
@@ -103,12 +65,7 @@ const Books = ({books}:BooksProps) => {
                     {book.Size}
                   </p>
                 </div>
-                <Button
-                  className="w-full mt-4 hover:bg-white hover:text-black text-white bg-red-500"
-                  onClick={() => downloadFile(book)}
-                >
-                  Download
-                </Button>
+                <DownloadButton book={book}/>
               </div>
             </div>
           ))}
