@@ -1,16 +1,18 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { libgenScraper } from "@/lib/actions";
-import { SearchBarProps } from "@/types";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-export function SearchBar({setSearchValue, searchValue, setBooks,fetching, setFetching}:SearchBarProps ) {
-    const handleSubmit = async (e:any) => {
+export function SearchBar() {
+    const [searchValue, setSearchValue] = useState("");
+    const router = useRouter();
+
+    const handleSubmit = (e: any) => {
         e.preventDefault();
-        setFetching(true);
-        const results = await libgenScraper(searchValue);
-        setBooks(results);
-        setFetching(false);
+        router.push('/search/' + encodeURIComponent(searchValue))
     };
+
     return (
         <form className="flex w-full space-x-2" onSubmit={handleSubmit}>
             <Input
@@ -19,7 +21,7 @@ export function SearchBar({setSearchValue, searchValue, setBooks,fetching, setFe
                 placeholder="Enter the title of the book.."
                 onChange={(e) => setSearchValue(e.target.value)}
             />
-            <Button type="submit" disabled={fetching}>Search</Button>
+            <Button type="submit">Search</Button>
         </form>
     )
 }

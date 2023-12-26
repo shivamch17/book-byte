@@ -31,3 +31,11 @@ export async function getAllBooks() {
   const data = prisma.book.findMany();
   return data;
 }
+
+export async function getLatestBooks() {
+  const books = await prisma.book.findMany({
+    take: 50,
+    orderBy: { id: "desc" },
+  });
+  return books;
+}
