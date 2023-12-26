@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { getDownloadLinks } from "@/lib/actions";
-import { Book } from "@/types";
+import { BookT } from "@/types";
 
-interface Props{
-  book: Book
+interface Props {
+  book: BookT
 }
 
-export default function DownloadButton({book}:Props) {
+export default function DownloadButton({ book }: Props) {
   const [downloading, setDownloading] = useState(false);
 
   const handleDownload = async () => {
     setDownloading(true);
     const links = await getDownloadLinks(book.Mirror1);
-    function tryDownload(index:number) {
+    function tryDownload(index: number) {
       if (index >= links?.length) {
         console.error("Failed to download file from all URLs");
         setDownloading(false);

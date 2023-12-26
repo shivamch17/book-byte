@@ -1,24 +1,24 @@
-import { Book } from "@/types"
+import { BookT } from "@/types"
 import Image from "next/image"
 import DownloadButton from '@/components/DownloadButton';
 
 type BooksProps = {
-  books: Book[];
+  books: BookT[];
 };
 
-const Books = ({books}:BooksProps) => {
+const Books = ({ books }: BooksProps) => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:px-6 gap-6 mb-8 w-full px-2'>
       {books?.length === 0 ? (
         <div className="text-2xl col-span-full">No Records</div>
       ) : (
         <>
-          {books?.map((book: Book, idx: number) => (
+          {books?.map((book: BookT, idx: number) => (
             <div
               className='flex bg-gray-800 text-white rounded-xl shadow-xl '
               key={idx}
             >
-             <div className="relative w-1/2 m-1.5 max-sm:min-w-[180px] min-w-[220px]">
+              <div className="relative w-1/2 m-1.5 max-sm:min-w-[180px] min-w-[220px]">
                 <Image
                   src={book.Image}
                   layout="fill"
@@ -65,14 +65,14 @@ const Books = ({books}:BooksProps) => {
                     {book.Size}
                   </p>
                 </div>
-                <DownloadButton book={book}/>
+                <DownloadButton book={book} />
               </div>
             </div>
           ))}
         </>
       )}
     </div>
-  );  
+  );
 }
 
 export default Books
